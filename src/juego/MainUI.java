@@ -8,9 +8,8 @@ public class MainUI {
 		
 		String palo1 = "escudo";
 		String nombre1 = "cinco";
-		int valor1 = 5;
 		
-		primeraCarta = crearCarta(palo1, nombre1, valor1);
+		primeraCarta = crearCarta(palo1, nombre1);
 		
 		if (primeraCarta!=null) {
 			System.out.println("Primera carta creada");
@@ -18,9 +17,8 @@ public class MainUI {
 		
 		String palo2 = "flores";
 		String nombre2 = "jota";
-		int valor2 = 10;
 		
-		segundaCarta = crearCarta(palo2, nombre2, valor2);
+		segundaCarta = crearCarta(palo2, nombre2);
 		
 		if (segundaCarta!=null) {
 			System.out.println("Segunda carta creada");
@@ -36,23 +34,22 @@ public class MainUI {
 			
 		}else {
 			
-			System.out.println("Las cartas NO son iguales");
-			
-		}
-		
+			System.out.println("Las cartas NO son iguales");			
+		}		
 	}
 
-	public static Carta crearCarta(String palo, String nombre, int valor) {
+	@SuppressWarnings("null")
+	public static Carta crearCarta(String palo, String nombre) {
 		
 		Carta carta = null;
 		
-		if (valor > 10 && valor < 1) {
+		if (carta.calcularValor(nombre) > 10 && carta.calcularValor(nombre) < 1) {
 			
 			System.out.println("El valor de la carta es invalido");
 			
 		}else {
 			
-			carta = new Carta(palo, nombre, valor);	
+			carta = new Carta(palo, nombre);	
 		}
 				
 		return carta;
