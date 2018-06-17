@@ -26,7 +26,21 @@ public class Mesa {
 
 	public void setJugadores(ArrayList<Jugador> jugadores) {
 		this.jugadores = jugadores;
-	}	
+	}
+	
+	public boolean agregarJugadores(Jugador jugador) {
+		
+		boolean agregado = false;
+		
+		if (jugadores.size()<4){
+			
+			jugadores.add(jugador);
+			agregado = true;
+		}
+		
+		return agregado;
+		
+	}
 	
 	
 }
