@@ -4,6 +4,9 @@ public class Carta {
 
 	String palo, nombre;
 	int valor;
+	
+	public Carta() {}
+	
 	public Carta(String palo, String nombre, int valor) {
 		this.palo = palo;
 		this.nombre = nombre;
