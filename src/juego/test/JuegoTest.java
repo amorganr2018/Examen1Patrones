@@ -20,14 +20,14 @@ class JuegoTest {
 	
 	@Test
 	public void testCrearCarta() {
-		assertNotNull(carta, MainUI.crearCarta("flores", "jota", 10));
+		assertNotNull(carta, MainUI.crearCarta("flores", "jota"));
 	}
 	
 	@Test
 	public void TestCompararCartas() {
 		
-		Carta cartaUno = new Carta("flores", "jota", 10);
-		Carta cartaDos = new Carta("flores", "jota", 10);
+		Carta cartaUno = new Carta("flores", "jota");
+		Carta cartaDos = new Carta("flores", "jota");
 		
 		assertTrue(MainUI.compararCartas(cartaUno, cartaDos));
 		

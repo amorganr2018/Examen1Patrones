@@ -16,7 +16,7 @@ public class MainUI {
 		}
 		
 		String palo2 = "flores";
-		String nombre2 = "jota";
+		String nombre2 = "cinco";
 		
 		segundaCarta = crearCarta(palo2, nombre2);
 		

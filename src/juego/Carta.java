@@ -13,29 +13,48 @@ public class Carta {
 		this.valor = calcularValor(nombre);
 	}
 		
-	public int calcularValor(String nombre) {
+	static public int calcularValor(String nombre) {
 		int valor = 0;
 		if(nombre.toLowerCase() == "as") {
 			valor = 1; 
-		}else if(nombre.toLowerCase() == "dos") {
+		}
+
+		if(nombre.toLowerCase() == "dos") {
 			valor = 2;
-		}else if(nombre.toLowerCase() == "tres") {
+		}
+
+		if(nombre.toLowerCase() == "tres") {
 			valor = 3;
-		}else if(nombre.toLowerCase() == "cuatro") {
+		}
+
+		if(nombre.toLowerCase() == "cuatro") {
 			valor = 4;
-		}else if(nombre.toLowerCase() == "cinco") {
+		}
+
+		if(nombre.toLowerCase() == "cinco") {
 			valor = 5;
-		}else if(nombre.toLowerCase() == "seis") {
+		}
+
+		if(nombre.toLowerCase() == "seis") {
 			valor = 6;
-		}else if(nombre.toLowerCase() == "siete") {
+		}
+
+		if(nombre.toLowerCase() == "siete") {
 			valor = 7;
-		}else if(nombre.toLowerCase() == "ocho") {
+		}
+
+		if(nombre.toLowerCase() == "ocho") {
 			valor = 8;
-		}else if(nombre.toLowerCase() == "nueve") {			
+		}
+		
+		if(nombre.toLowerCase() == "nueve") {			
 			valor = 9;
-		}else if(nombre.toLowerCase() == "jota" ||
-				nombre.toLowerCase() == "quina" ||
-				nombre.toLowerCase() == "ka") {
+		}
+		
+		if(nombre.toLowerCase() == "jota" ||
+			nombre.toLowerCase() == "quina" ||
+			nombre.toLowerCase() == "ka") {
+			
 			valor = 10;
 		}
 		
