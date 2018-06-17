@@ -9,6 +9,8 @@ public class Jugador {
 	
 	ArrayList<Carta> mano = new ArrayList<Carta>(cantidadCartas);
 	
+	public Jugador() {}
+	
 	public Jugador(String nombre, ArrayList<Carta> mano) {
 		this.nombre = nombre;
 		this.mano = mano;
