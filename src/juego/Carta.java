@@ -13,49 +13,48 @@ public class Carta {
 		this.valor = calcularValor(nombre);
 	}
 		
-	static public int calcularValor(String nombre) {
+	private int calcularValor(String nombre) {
 		int valor = 0;
-		if(nombre.toLowerCase() == "as") {
-			valor = 1; 
-		}
-
-		if(nombre.toLowerCase() == "dos") {
-			valor = 2;
-		}
-
-		if(nombre.toLowerCase() == "tres") {
-			valor = 3;
-		}
-
-		if(nombre.toLowerCase() == "cuatro") {
-			valor = 4;
-		}
-
-		if(nombre.toLowerCase() == "cinco") {
-			valor = 5;
-		}
-
-		if(nombre.toLowerCase() == "seis") {
-			valor = 6;
-		}
-
-		if(nombre.toLowerCase() == "siete") {
-			valor = 7;
-		}
-
-		if(nombre.toLowerCase() == "ocho") {
-			valor = 8;
-		}
 		
-		if(nombre.toLowerCase() == "nueve") {			
-			valor = 9;
-		}
-		
-		if(nombre.toLowerCase() == "jota" ||
-			nombre.toLowerCase() == "quina" ||
-			nombre.toLowerCase() == "ka") {
-			
-			valor = 10;
+		switch(nombre.toLowerCase()) {
+			case "as":
+				valor = 1;
+				break;
+			case "dos":
+				valor = 2;
+				break;
+			case "tres":
+				valor = 3;
+				break;
+			case "cuatro":
+				valor = 4;
+				break;
+			case "cinco":
+				valor = 5;
+				break;
+			case "seis":
+				valor = 6;
+				break;
+			case "siete":
+				valor = 7;
+				break;
+			case "ocho":
+				valor = 8;
+				break;
+			case "nueve":
+				valor = 9;
+				break;
+			case "jota":
+				valor = 10;
+				break;
+			case "quina":
+				valor = 10;
+				break;
+			case "ka":
+				valor = 10;
+				break;
+			default:
+				System.out.println("Error valor de carta invalido");
 		}
 		
 		return valor;
@@ -85,4 +84,23 @@ public class Carta {
 		this.valor = valor;
 	}
 	
+	@Override
+	public boolean equals(Object carta) {
+		
+	    if (this == carta) {
+	    	return true;
+	    }
+	        
+	    if (carta == null) {
+	        return false;
+	    }
+	    
+	    if(!(carta instanceof Carta)) {
+	        return false;
+	    }
+	    
+	    Carta cartaTemp = (Carta) carta;
+	    
+	    return this.getValor() == cartaTemp.getValor();
+	}
 }

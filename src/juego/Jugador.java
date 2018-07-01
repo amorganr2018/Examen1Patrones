@@ -7,13 +7,13 @@ public class Jugador {
 	String nombre;
 	int cantidadCartas;
 	
-	ArrayList<Carta> mano = new ArrayList<Carta>(cantidadCartas);
+	ArrayList<Carta> mano;
 	
 	public Jugador() {}
 	
-	public Jugador(String nombre, ArrayList<Carta> mano) {
+	public Jugador(String nombre) {
 		this.nombre = nombre;
-		this.mano = mano;
+		this.mano = new ArrayList<Carta>();
 	}
 	
 	public ArrayList<Carta> getMano() {
@@ -30,9 +30,6 @@ public class Jugador {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-	
-	
-	
+	}	
 	
 }

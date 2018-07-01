@@ -4,12 +4,14 @@ import java.util.ArrayList;
 
 public class Mesa {
 	
-	Repartidor repartidor = new Repartidor();
-	ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
+	Repartidor repartidor;
+	public ArrayList<Jugador> jugadores;
+	public int cantidadJugadores = 0;
+	private final int cantidadMaximaJugadores = 4;
 
-	public Mesa(Repartidor repartidor, ArrayList<Jugador> jugadores) {
-		this.repartidor = repartidor;
-		this.jugadores = jugadores;
+	public Mesa() {
+		this.repartidor = new Repartidor();
+		this.jugadores = new ArrayList<Jugador>();
 	}
 
 	public Repartidor getRepartidor() {
@@ -22,25 +24,19 @@ public class Mesa {
 
 	public ArrayList<Jugador> getJugadores() {
 		return jugadores;
-	}
-
+	}	
+	
 	public void setJugadores(ArrayList<Jugador> jugadores) {
 		this.jugadores = jugadores;
 	}
-	
-	public boolean agregarJugadores(Jugador jugador) {
-		
-		boolean agregado = false;
-		
-		if (jugadores.size()<4){
-			
-			jugadores.add(jugador);
-			agregado = true;
+
+	public void agregarJugador(Jugador pJugador) {
+		if(jugadores.size()<cantidadMaximaJugadores) {
+			this.jugadores.add(pJugador);
+			cantidadJugadores++;
+		}else {			
+			System.out.println("Mesa llena, la cantidad maxima de jugadores por mesa "
+					+ "es de "+cantidadMaximaJugadores+" judadores.");
 		}
-		
-		return agregado;
-		
-	}
-	
-	
+	}	
 }
