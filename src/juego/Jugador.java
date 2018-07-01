@@ -1,6 +1,8 @@
 package juego;
 
 import java.util.ArrayList;
+import java.util.Random;
+import java.util.stream.IntStream;
 
 public class Jugador {
 	
@@ -45,7 +47,21 @@ public class Jugador {
 	
 	public void tomarCarta(Naipe pNaipe) {
 		Carta carta = pNaipe.sacarCarta();
+		if(mano.size() > 0) {
+			desecharCarta();
+		}
 		agregarCartaMano(carta);
+	}
+	
+	public void desecharCarta() {
+		System.out.println(mano.toString());
+		mano.remove(getRandomNumber(0,mano.size()-1));
+		System.out.println(mano.toString());
+	}
+	
+	public int getRandomNumber(int min, int max) {
+		int num = (int)(Math.random()*((max-min)+1))+min;
+	    return num;
 	}
 	
 }

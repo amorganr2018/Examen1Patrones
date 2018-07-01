@@ -42,4 +42,14 @@ public class JugadorTest {
 		jugador1.tomarCarta(naipe1);
 		assertEquals(1,jugador1.getMano().size());
 	}
+	
+	@Test
+	public void desecharCartaTest() {
+		jugador1 = new Jugador("Juan");
+		carta1 = new Carta("flores", "cinco");
+		jugador1.agregarCartaMano(carta1);
+		jugador1.desecharCarta();
+		assertEquals(0, jugador1.getMano().size());
+	}
+	
 }
