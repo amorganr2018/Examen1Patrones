@@ -78,7 +78,7 @@ public class MesaTest {
 	@Test
 	public void revisarJQKTresTest() {
 		carta1 = new Carta("escudos", "cinco");
-		carta2 = new Carta("estrellas", "jota");
+		carta2 = new Carta("estrellas", "tres");
 		mesa = new Mesa();
 		assertFalse(mesa.revisarJQKTres(carta1));
 		assertTrue(mesa.revisarJQKTres(carta2));
@@ -87,7 +87,7 @@ public class MesaTest {
 	@Test
 	public void verificarCambioTest() {
 		
-		carta1 = new Carta("escudos", "cinco");
+		carta1 = new Carta("escudos", "jota");
 		carta2 = new Carta("estrellas", "tres");
 		mano1 = new ArrayList<Carta>();
 		mano1.add(carta1);
@@ -97,9 +97,21 @@ public class MesaTest {
 		mesa.verificarCambio(jugador1);
 		
 		assertNotEquals(carta1, jugador1.getMano().get(0));
-		assertNotEquals(carta1, jugador1.getMano().get(1));
-		assertNotEquals(carta2, jugador1.getMano().get(0));
-		assertNotEquals(carta2, jugador1.getMano().get(1));		
+		assertNotEquals(carta2, jugador1.getMano().get(1));
+		
+	}
+	
+	@Test
+	public void determinarVeinteYMedio() {
+		carta1 = new Carta("escudos", "jota");
+		carta2 = new Carta("estrellas", "dos");
+		mano1 = new ArrayList<Carta>();
+		mano1.add(carta1);
+		mano1.add(carta2);
+		jugador1.setMano(mano1);
+		mesa.agregarJugador(jugador1);
+		
+		assertTrue(mesa.determinarVeinteYMedio(jugador1));
 		
 	}
 	

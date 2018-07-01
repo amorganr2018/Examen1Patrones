@@ -52,24 +52,44 @@ public class Mesa {
 		ArrayList<Jugador> listaGanadores = new ArrayList<Jugador>();
 		int manoAnterior = 0;		
 		int resultado = 0;
-		int resultadoLimite = 21;		
+		int resultadoLimite = 21;
 		for(int i = 0; i < jugadores.size(); i++)  {				
 			resultado = jugadores.get(i).calcularMano();			
-			if(resultado <= resultadoLimite) {				
-				if(resultado > manoAnterior) {					
+			if(resultado <= resultadoLimite) {
+				
+				if (determinarVeinteYMedio(jugadores.get(i))) {
+					 
 					listaGanadores = new ArrayList<Jugador>();
 					listaGanadores.add(jugadores.get(i));
-					manoAnterior = resultado;					
-				}else if(resultado == manoAnterior) {					
-					listaGanadores.add(jugadores.get(i));										
-				}else {
 					manoAnterior = resultado;
-				}				
+					
+				}else {
+					
+					if (resultado > manoAnterior) {
+						listaGanadores = new ArrayList<Jugador>();
+						listaGanadores.add(jugadores.get(i));
+						manoAnterior = resultado;
+					} else if (resultado == manoAnterior) {
+						listaGanadores.add(jugadores.get(i));
+					} else {
+						manoAnterior = resultado;
+					}
+				}
+				
 			} //						
 		}
 		return listaGanadores;		
 	}
 	
+	public boolean determinarVeinteYMedio(Jugador pJugador) {	
+		
+		if((pJugador.getMano().get(0).getValor() == 10 || pJugador.getMano().get(0).getValor() == 2) &&
+			(pJugador.getMano().get(1).getValor() == 10 || pJugador.getMano().get(1).getValor() == 2)) {
+			return true;			
+		}		
+		return false;
+	}
+
 	public void verificarCambio(Jugador pJugador) {
 
 		if(revisarJQKTres(pJugador.getMano().get(0)) && revisarJQKTres(pJugador.getMano().get(1)) ) {				
