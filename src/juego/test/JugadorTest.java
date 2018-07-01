@@ -50,6 +50,6 @@ public class JugadorTest {
 		jugador1.agregarCartaMano(carta1);
 		jugador1.desecharCarta();
 		assertEquals(0, jugador1.getMano().size());
-	}
+	}	
 	
 }

@@ -121,5 +121,12 @@ public class Mesa {
 		this.deck = repartidor.getNaipe();
 	}
 	
+	public void resetAll() {
+		repartidor = new Repartidor();
+		jugadores = new ArrayList<Jugador>();
+		cantidadJugadores = 0;
+		deck = new Naipe();
+	}
+	
 	
 }

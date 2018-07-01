@@ -122,5 +122,16 @@ public class MesaTest {
 		assertEquals(7,mesa.jugadores.get(0).getMano().size());
 	}
 	
-
+	@Test
+	public void resetAllTest() {
+		jugador1 = new Jugador("Jacinta");
+		jugador2 = new Jugador("Bryan");
+		mesa = new Mesa();
+		mesa.agregarJugador(jugador1);
+		mesa.agregarJugador(jugador2);		
+		mesa.empezarAJugar21();
+		mesa.resetAll();
+		assertEquals(52,mesa.getRepartidor().cantidadCartasEnNaipe);
+		assertEquals(0,mesa.cantidadJugadores);
+	}
 }
