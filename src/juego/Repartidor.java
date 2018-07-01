@@ -2,7 +2,7 @@ package juego;
 
 public class Repartidor {
 	
-	Naipe naipe;
+	public Naipe naipe;
 	public int cantidadCartasEnNaipe=52;
 	
 	public Repartidor() {
@@ -13,6 +13,14 @@ public class Repartidor {
 	public void darCarta(Jugador pJugador) {
 		pJugador.agregarCartaMano(naipe.sacarCarta());
 		cantidadCartasEnNaipe--;
+	}
+	
+	public Naipe getNaipe() {
+		return naipe;
+	}
+
+	public void setNaipe(Naipe naipe) {
+		this.naipe = naipe;
 	}
 	
 }

@@ -8,6 +8,7 @@ public class Mesa {
 	public ArrayList<Jugador> jugadores;
 	public int cantidadJugadores = 0;
 	private final int cantidadMaximaJugadores = 4;
+	private Naipe deck;
 
 	public Mesa() {
 		this.repartidor = new Repartidor();
@@ -46,6 +47,7 @@ public class Mesa {
 				repartidor.darCarta(jugadores.get(x));
 			}
 		}
+		this.deck = repartidor.getNaipe();
 	}
 	
 	public ArrayList<Jugador> determinarGanadorDePartida() {
@@ -116,6 +118,7 @@ public class Mesa {
 				repartidor.darCarta(jugadores.get(x));
 			}
 		}
+		this.deck = repartidor.getNaipe();
 	}
 	
 	

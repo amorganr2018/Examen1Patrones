@@ -41,7 +41,12 @@ public class Jugador {
 		for(int i = 0; i < mano.size(); i++) {			
 			total = total + mano.get(i).getValor();		}
 		return total;		
-	}	
+	}
+	
+	public void tomarCarta(Naipe pNaipe) {
+		Carta carta = pNaipe.sacarCarta();
+		agregarCartaMano(carta);
+	}
 	
 }
 
