@@ -41,6 +41,7 @@ public class Jugador {
 		for(int i = 0; i < mano.size(); i++) {			
 			total = total + mano.get(i).getValor();		}
 		return total;		
-	}
+	}	
 	
 }
+

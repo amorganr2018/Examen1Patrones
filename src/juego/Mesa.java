@@ -70,5 +70,25 @@ public class Mesa {
 		return listaGanadores;		
 	}
 	
+	public void verificarCambio(Jugador pJugador) {
+
+		if(revisarJQKTres(pJugador.getMano().get(0)) && revisarJQKTres(pJugador.getMano().get(1)) ) {				
+			pJugador.mano = new ArrayList<Carta>();
+			repartidor.darCarta(pJugador);
+			repartidor.darCarta(pJugador);
+		}else {
+			System.out.println("Cambio de cartas invalido");
+		}
+	}
+	
+	public boolean revisarJQKTres (Carta pCarta) {
+		System.out.println(pCarta.getValor());
+		if(pCarta.getValor() == 10 || pCarta.getValor() == 3) {
+			return true;
+		}else {
+			return false;
+		}		
+	}
+	
 	
 }

@@ -72,8 +72,34 @@ public class MesaTest {
 		
 		listaGanadores = mesa.determinarGanadorDePartida();
 		
-		assertEquals(jugador1,listaGanadores.get(0));
-
+		assertEquals(jugador1,listaGanadores.get(0));		
+	}
+	
+	@Test
+	public void revisarJQKTresTest() {
+		carta1 = new Carta("escudos", "cinco");
+		carta2 = new Carta("estrellas", "jota");
+		mesa = new Mesa();
+		assertFalse(mesa.revisarJQKTres(carta1));
+		assertTrue(mesa.revisarJQKTres(carta2));
+	}
+	
+	@Test
+	public void verificarCambioTest() {
+		
+		carta1 = new Carta("escudos", "cinco");
+		carta2 = new Carta("estrellas", "tres");
+		mano1 = new ArrayList<Carta>();
+		mano1.add(carta1);
+		mano1.add(carta2);
+		jugador1.setMano(mano1);
+		mesa.agregarJugador(jugador1);		
+		mesa.verificarCambio(jugador1);
+		
+		assertNotEquals(carta1, jugador1.getMano().get(0));
+		assertNotEquals(carta1, jugador1.getMano().get(1));
+		assertNotEquals(carta2, jugador1.getMano().get(0));
+		assertNotEquals(carta2, jugador1.getMano().get(1));		
 		
 	}
 	
