@@ -14,6 +14,7 @@ public class NaipeTest {
 	@Before
 	public void initialize() {
 		naipe = new Naipe();
-	}	
+	}
+	
 
 }
