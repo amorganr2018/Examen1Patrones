@@ -15,7 +15,6 @@ public class Carta {
 		
 	private int calcularValor(String nombre) {
 		int valor = 0;
-		
 		switch(nombre.toLowerCase()) {
 			case "as":
 				valor = 1;
@@ -44,12 +43,9 @@ public class Carta {
 			case "nueve":
 				valor = 9;
 				break;
+			case "diez":
 			case "jota":
-				valor = 10;
-				break;
 			case "quina":
-				valor = 10;
-				break;
 			case "ka":
 				valor = 10;
 				break;

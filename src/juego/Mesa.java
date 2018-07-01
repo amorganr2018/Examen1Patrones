@@ -48,4 +48,27 @@ public class Mesa {
 		}
 	}
 	
+	public ArrayList<Jugador> determinarGanadorDePartida() {
+		ArrayList<Jugador> listaGanadores = new ArrayList<Jugador>();
+		int manoAnterior = 0;		
+		int resultado = 0;
+		int resultadoLimite = 21;		
+		for(int i = 0; i < jugadores.size(); i++)  {				
+			resultado = jugadores.get(i).calcularMano();			
+			if(resultado <= resultadoLimite) {				
+				if(resultado > manoAnterior) {					
+					listaGanadores = new ArrayList<Jugador>();
+					listaGanadores.add(jugadores.get(i));
+					manoAnterior = resultado;					
+				}else if(resultado == manoAnterior) {					
+					listaGanadores.add(jugadores.get(i));										
+				}else {
+					manoAnterior = resultado;
+				}				
+			} //						
+		}
+		return listaGanadores;		
+	}
+	
+	
 }

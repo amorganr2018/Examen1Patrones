@@ -2,9 +2,12 @@ package juego.test;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Before;
 import org.junit.Test;
 
+import juego.Carta;
 import juego.Jugador;
 import juego.Mesa;
 
@@ -12,6 +15,9 @@ public class MesaTest {
 	
 	Mesa mesa;
 	Jugador jugador1, jugador2, jugador3, jugador4, jugador5;
+	Carta carta1, carta2, carta3, carta4;
+	ArrayList<Carta> mano1, mano2;
+	ArrayList<Jugador> listaGanadores;
 	
 	@Before
 	public void initialize() {
@@ -21,6 +27,7 @@ public class MesaTest {
 		jugador3 = new Jugador("Pedro");
 		jugador4 = new Jugador("Pepito");
 		jugador5 = new Jugador("Charlie");
+		
 	}
 	
 	@Test
@@ -42,6 +49,33 @@ public class MesaTest {
 		mesa.empezarAJugar21();
 		assertEquals(2,jugador1.getMano().size());
 	}
+	
+	@Test
+	public void determinarGanadorDePartidaTest() {
+		
+		carta1 = new Carta("flores", "cinco");
+		carta2 = new Carta("estrellas", "cuatro");
+		mano1 = new ArrayList<Carta>();
+		mano1.add(carta1);
+		mano1.add(carta2);
+		jugador1.setMano(mano1);
+		
+		carta3 = new Carta("flores", "tres");
+		carta4 = new Carta("estrellas", "dos"); 
+		mano2 = new ArrayList<Carta>();
+		mano2.add(carta3);
+		mano2.add(carta4);
+		jugador2.setMano(mano2);
+		
+		mesa.agregarJugador(jugador1);
+		mesa.agregarJugador(jugador2);
+		
+		listaGanadores = mesa.determinarGanadorDePartida();
+		
+		assertEquals(jugador1,listaGanadores.get(0));
 
+		
+	}
+	
 
 }

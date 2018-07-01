@@ -30,6 +30,17 @@ public class Jugador {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}	
+	}
+	
+	public void agregarCartaMano(Carta pCarta) {		
+		mano.add(pCarta);	
+	}
+	
+	public int calcularMano() {
+		int total = 0;		
+		for(int i = 0; i < mano.size(); i++) {			
+			total = total + mano.get(i).getValor();		}
+		return total;		
+	}
 	
 }
