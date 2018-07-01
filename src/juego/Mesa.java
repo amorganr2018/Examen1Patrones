@@ -38,5 +38,14 @@ public class Mesa {
 			System.out.println("Mesa llena, la cantidad maxima de jugadores por mesa "
 					+ "es de "+cantidadMaximaJugadores+" judadores.");
 		}
-	}	
+	}
+	
+	public void empezarAJugar21() {		
+		for(int x = 0; x < jugadores.size(); x++) {		
+			for(int y = 0; y < 2; y++ ) {				
+				repartidor.darCarta(jugadores.get(x));
+			}
+		}
+	}
+	
 }

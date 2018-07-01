@@ -26,20 +26,21 @@ public class MesaTest {
 	@Test
 	public void verificarCantidadMaximaJugadoresPositivo() {		
 		mesa.agregarJugador(jugador1);
-		mesa.agregarJugador(jugador2);
-		mesa.agregarJugador(jugador3);
-		mesa.agregarJugador(jugador4);		
-		assertEquals(4,mesa.jugadores.size());		
+		assertEquals(1,mesa.jugadores.size());		
 	}
 	
 	@Test
 	public void verificarCantidadMaximaJugadoresNegativo() {		
 		mesa.agregarJugador(jugador1);
 		mesa.agregarJugador(jugador2);
-		mesa.agregarJugador(jugador3);
-		mesa.agregarJugador(jugador4);
-		mesa.agregarJugador(jugador5);
-		assertNotEquals(4,mesa.jugadores.size());
+		assertNotEquals(1,mesa.jugadores.size());
+	}
+	
+	@Test
+	public void empezarAJugar21Test() {
+		mesa.agregarJugador(jugador1);
+		mesa.empezarAJugar21();
+		assertEquals(2,jugador1.getMano().size());
 	}
 
 
