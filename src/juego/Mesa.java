@@ -110,5 +110,13 @@ public class Mesa {
 		}		
 	}
 	
+	public void empezarPartidaDeRon() {
+		for(int x = 0; x < jugadores.size(); x++) {		
+			for(int y = 0; y < 7; y++ ) {				
+				repartidor.darCarta(jugadores.get(x));
+			}
+		}
+	}
+	
 	
 }

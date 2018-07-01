@@ -26,8 +26,7 @@ public class MesaTest {
 		jugador2 = new Jugador("Bryan");
 		jugador3 = new Jugador("Pedro");
 		jugador4 = new Jugador("Pepito");
-		jugador5 = new Jugador("Charlie");
-		
+		jugador5 = new Jugador("Charlie");		
 	}
 	
 	@Test
@@ -113,6 +112,14 @@ public class MesaTest {
 		
 		assertTrue(mesa.determinarVeinteYMedio(jugador1));
 		
+	}
+	
+	@Test
+	public void empezarPartidaDeRonTest() {
+		mesa = new Mesa();
+		mesa.agregarJugador(jugador1);
+		mesa.empezarPartidaDeRon();
+		assertEquals(7,mesa.jugadores.get(0).getMano().size());
 	}
 	
 
